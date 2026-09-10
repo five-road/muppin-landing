@@ -26,7 +26,7 @@ export function PrivacyPage() {
   return (
     <main className="privacy-page">
       <header className="privacy-nav shell">
-        <a className="brand" href="/" aria-label="Muppin 랜딩페이지">Muppin</a>
+        <a className="brand brand-dark" href="/" aria-label="Muppin 랜딩페이지"><img src="/assets/muppin-icon.png" alt="" /><span><img className="brand-wordmark" src="/assets/muppin-wordmark.png" alt="Muppin" /></span></a>
         <a className="privacy-back" href="/">홈으로 돌아가기</a>
       </header>
 
@@ -45,7 +45,7 @@ export function PrivacyPage() {
             <article><strong>서비스</strong><span>Muppin 홈 라이프 플랫폼</span></article>
             <article><strong>가입 연령</strong><span>만 14세 이상</span></article>
             <article><strong>문의</strong><a href="mailto:treka0723@kakao.com">treka0723@kakao.com</a></article>
-            <article><strong>계정 삭제</strong><span>앱 설정에서 직접 요청</span></article>
+            <article><strong>계정 삭제</strong><a href="/delete-account">회원탈퇴 안내에서 요청</a></article>
           </div>
         </div>
       </section>
@@ -141,7 +141,7 @@ export function PrivacyPage() {
               <li>프로필·게시물: 앱의 마이페이지 및 각 콘텐츠 메뉴에서 직접 수정·삭제</li>
               <li>알림: 기기 설정에서 권한 철회</li>
               <li>마케팅: 앱 설정 또는 문의 이메일을 통해 동의 철회</li>
-              <li>회원 탈퇴: 앱의 설정 → 계정 관리 → 회원탈퇴에서 직접 요청</li>
+              <li>회원 탈퇴: 앱의 설정 또는 <a href="/delete-account">회원탈퇴 안내 페이지</a>에서 요청</li>
               <li>그 밖의 권리 행사: <a href="mailto:treka0723@kakao.com">treka0723@kakao.com</a>으로 요청</li>
             </ul>
             <p>권리 행사는 대리인을 통해서도 할 수 있으며, 운영자는 요청자가 본인 또는 정당한 대리인인지 확인할 수 있습니다. 법령이 정한 사유가 있는 경우 요청이 제한될 수 있으며 그 사유를 안내합니다.</p>
@@ -205,7 +205,7 @@ export function PrivacyPage() {
         </article>
       </div>
 
-      <footer className="privacy-footer"><div className="shell"><a className="brand" href="/">Muppin</a><p>개인정보 관련 문의 · <a href="mailto:treka0723@kakao.com">treka0723@kakao.com</a></p></div></footer>
+      <footer className="privacy-footer"><div className="shell"><a className="brand brand-dark" href="/"><img src="/assets/muppin-icon.png" alt="" /><span><img className="brand-wordmark" src="/assets/muppin-wordmark.png" alt="Muppin" /></span></a><p><a href="/delete-account">회원탈퇴</a> · 개인정보 관련 문의 · <a href="mailto:treka0723@kakao.com">treka0723@kakao.com</a></p></div></footer>
     </main>
   );
 }

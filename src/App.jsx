@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { PrivacyPage } from "./PrivacyPage";
+import { DeleteAccountPage } from "./DeleteAccountPage";
 
 const tags = ["#빨래완료", "#청소끝", "#꿀잠데이", "#정주행중"];
 const benefits = [
@@ -14,11 +15,6 @@ const guideContent = {
     eyebrow: "JOIN MUPPIN",
     title: "회원가입 안내",
     body: <><p>Muppin 앱에서 이메일과 닉네임으로 가입할 수 있어요.</p><ol><li>앱에서 회원가입을 선택해요.</li><li>기본 정보를 입력하고 약관에 동의해요.</li><li>첫 집 태그를 남기면 다른 집순이의 일상을 볼 수 있어요.</li></ol><p className="dialog-note">앱 다운로드 링크는 출시 시 연결할 예정이에요.</p></>,
-  },
-  withdraw: {
-    eyebrow: "ACCOUNT",
-    title: "회원탈퇴 안내",
-    body: <><p>앱의 계정 설정에서 회원탈퇴를 요청할 수 있어요.</p><ol><li>마이페이지에서 설정을 열어요.</li><li>계정 관리에서 회원탈퇴를 선택해요.</li><li>안내를 확인한 뒤 탈퇴를 완료해요.</li></ol><p className="dialog-note">도움이 필요하면 문의 이메일로 연락해 주세요.</p></>,
   },
 };
 
@@ -67,6 +63,9 @@ export function App() {
   if (window.location.pathname.replace(/\/$/, "") === "/privacy") {
     return <PrivacyPage />;
   }
+  if (window.location.pathname.replace(/\/$/, "") === "/delete-account") {
+    return <DeleteAccountPage />;
+  }
 
   return (
     <main>
@@ -74,7 +73,7 @@ export function App() {
         <div className="hero-image" aria-hidden="true" />
         <div className="hero-wash" aria-hidden="true" />
         <header className="nav shell">
-          <a className="brand" href="#top" aria-label="Muppin 홈">Muppin</a>
+          <a className="brand brand-hero" href="#top" aria-label="Muppin 홈"><img src="/assets/muppin-icon.png" alt="" /><img className="brand-wordmark" src="/assets/muppin-wordmark.png" alt="Muppin" /></a>
           <nav aria-label="주요 메뉴"><a href="#about">Muppin 소개</a><a href="#rule">Muppin의 룰</a><a href="#guide">이용 안내</a><a href="#contact">문의하기</a></nav>
           <button className="pill solid" onClick={() => openGuide("signup")}>회원가입</button>
         </header>
@@ -113,7 +112,7 @@ export function App() {
 
       <section className="guide section" id="guide"><div className="shell" data-reveal>
         <p className="eyebrow dark">QUICK GUIDE</p><h2>필요한 안내를<br />바로 찾아보세요.</h2>
-        <div className="guide-list"><button onClick={() => openGuide("signup")}><span>회원가입 안내</span><small>Muppin을 처음 시작하는 방법</small></button><button onClick={() => openGuide("withdraw")}><span>회원탈퇴 안내</span><small>계정을 정리하는 방법</small></button><a href="/privacy"><span>개인정보처리방침</span><small>개인정보 처리 기준 확인</small></a></div>
+        <div className="guide-list"><button onClick={() => openGuide("signup")}><span>회원가입 안내</span><small>Muppin을 처음 시작하는 방법</small></button><a href="/delete-account"><span>회원탈퇴 안내</span><small>이메일로 계정 삭제 요청</small></a><a href="/privacy"><span>개인정보처리방침</span><small>개인정보 처리 기준 확인</small></a></div>
       </div></section>
 
       <section className="contact section shell" id="contact" data-reveal>
@@ -121,7 +120,7 @@ export function App() {
         <div className="contact-box"><p>궁금한 점이나 도움이 필요한 순간,<br />편하게 메일을 남겨주세요.</p><a className="email" href="mailto:treka0723@kakao.com">treka0723@kakao.com</a><a className="pill solid mail" href="mailto:treka0723@kakao.com?subject=Muppin%20문의">이메일로 문의하기</a></div>
       </section>
 
-      <footer className="footer shell"><a className="brand" href="#top">Muppin</a><p>더 나은 집순이가 되기까지.</p><div><button onClick={() => openGuide("signup")}>회원가입</button><button onClick={() => openGuide("withdraw")}>회원탈퇴</button><a href="/privacy">개인정보처리방침</a></div></footer>
+      <footer className="footer shell"><a className="brand brand-dark" href="#top" aria-label="Muppin 홈"><img src="/assets/muppin-icon.png" alt="" /><span><img className="brand-wordmark" src="/assets/muppin-wordmark.png" alt="Muppin" /></span></a><p>더 나은 집순이가 되기까지.</p><div><button onClick={() => openGuide("signup")}>회원가입</button><a href="/delete-account">회원탈퇴</a><a href="/privacy">개인정보처리방침</a></div></footer>
 
       {guide && <div className="dialog-backdrop" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && setGuide(null)}><section className="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabIndex="-1" ref={dialogRef}><button className="dialog-close" onClick={() => setGuide(null)} aria-label="닫기">닫기</button><p className="eyebrow dark">{guide.eyebrow}</p><h2 id="dialog-title">{guide.title}</h2><div className="dialog-body">{guide.body}</div></section></div>}
     </main>
