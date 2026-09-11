@@ -9,13 +9,14 @@ on:
 
 permissions:
   contents: write
+  packages: write
 
 concurrency:
   group: prd-gitops
   cancel-in-progress: true
 
 env:
-  IMAGE_NAME: muppin0430/muppin-landing
+  IMAGE_NAME: ghcr.io/five-road/muppin-landing
   IMAGE_TAG: prd-${{ github.run_number }}-${{ github.sha }}
   OVERLAY_PATH: deploy/k8s/overlays/prd/kustomization.yaml
 
@@ -36,11 +37,12 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Log in to Docker Hub
+      - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.PRD_DOCKER_USERNAME }}
-          password: ${{ secrets.PRD_DOCKER_PASSWORD }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6

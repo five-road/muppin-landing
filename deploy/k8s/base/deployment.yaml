@@ -22,8 +22,6 @@ spec:
         app.kubernetes.io/name: muppin-landing
         app.kubernetes.io/part-of: muppin
     spec:
-      imagePullSecrets:
-        - name: dockerhub-regcred
       containers:
         - name: muppin-landing
           image: muppin-landing:latest

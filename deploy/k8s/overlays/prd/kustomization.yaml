@@ -13,5 +13,5 @@ commonLabels:
 
 images:
   - name: muppin-landing
-    newName: muppin0430/muppin-landing
+    newName: ghcr.io/five-road/muppin-landing
     newTag: prd-placeholder
