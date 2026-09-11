@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: prd
+
+resources:
+  - ../../base
+  - ingress.yaml
+  - ingress-websecure.yaml
+
+commonLabels:
+  app.kubernetes.io/environment: prd
+
+images:
+  - name: muppin-landing
+    newName: muppin0430/muppin-landing
+    newTag: prd-placeholder
