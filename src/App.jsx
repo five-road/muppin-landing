@@ -84,8 +84,8 @@ export function App() {
           <div className="hero-actions"><button className="pill light" onClick={() => openGuide("signup")}>Muppin 시작하기</button><a className="pill glass" href="#about">Muppin 알아보기</a></div>
         </div>
         <div className="phone" role="img" aria-label="개발 브랜치의 실제 Muppin 홈 피드 앱 화면">
-          <img className="phone-base" src="/assets/muppin-phone-transparent.png" alt="" />
-          <img className="phone-feed" src="/assets/muppin-phone-real-feed-v3.png" alt="" />
+          <img className="phone-base" src="/assets/muppin-phone-transparent.webp" alt="" />
+          <img className="phone-feed" src="/assets/muppin-phone-real-feed-v3.webp" alt="" />
         </div>
         <p className="hero-caption">Muppin — 조용한 삶, 조용한 공유.</p>
       </section>
@@ -93,16 +93,16 @@ export function App() {
       <section className="intro section shell" id="about" data-reveal>
         <div className="intro-copy"><p className="eyebrow dark">WELCOME HOME</p><h2>집에서의 삶 전체를<br />기록해요.</h2><p className="lead">빨래, 청소, 넷플릭스, 꿀잠. 평범한 일상에도 나만의 리듬과 태도가 있어요.</p><p>누가 더 활발한지보다, 누가 더 자기답게 집을 살아가는지가 중요해요. 가볍게 기록하고, 비슷한 하루를 보내는 사람들과 조용히 연결돼 보세요.</p><div className="tags" aria-label="집 태그 예시">{tags.map((tag) => <span key={tag}>{tag}</span>)}</div></div>
         <div className="life-gallery" aria-label="Muppin에 기록하는 집에서의 순간들">
-          <figure className="life-photo life-photo-wide"><img src="/assets/editorial-bedroom-v2.png" alt="따뜻한 햇살이 드는 크림색 침실" /><figcaption>#꿀잠데이</figcaption></figure>
-          <figure className="life-photo"><img src="/assets/editorial-laundry-v2.png" alt="햇살 아래 포근한 니트가 담긴 라탄 세탁 바구니" /><figcaption>#빨래완료</figcaption></figure>
-          <figure className="life-photo"><img src="/assets/editorial-laptop-v2.png" alt="침대 위 노트북과 책, 따뜻한 차가 있는 휴식 시간" /><figcaption>#정주행중</figcaption></figure>
+          <figure className="life-photo life-photo-wide"><img src="/assets/editorial-bedroom-v2.webp" alt="따뜻한 햇살이 드는 크림색 침실" /><figcaption>#꿀잠데이</figcaption></figure>
+          <figure className="life-photo"><img src="/assets/editorial-laundry-v2.webp" alt="햇살 아래 포근한 니트가 담긴 라탄 세탁 바구니" /><figcaption>#빨래완료</figcaption></figure>
+          <figure className="life-photo"><img src="/assets/editorial-laptop-v2.webp" alt="침대 위 노트북과 책, 따뜻한 차가 있는 휴식 시간" /><figcaption>#정주행중</figcaption></figure>
         </div>
       </section>
 
       <section className="rule section" id="rule"><div className="shell rule-card" data-reveal>
         <div className="rule-grid"><div><p className="eyebrow dark">OUR RULE</p><h2>하나의 기록이,<br />연결의 시작.</h2></div>
         <div className="rule-copy"><p className="quote">“집순이지만,<br />소통은 하고 싶어요.”</p><p>다른 사람의 프로필을 보려면 최소 한 개 이상의 집 태그 게시물이 필요해요.</p><span>“나도 집에서 이렇게 살아”라는 서로의 일상 인증 문화예요.</span></div></div>
-        <figure className="rule-photo"><img src="/assets/editorial-note-v2.png" alt="햇살 아래 꽃과 빈 메모 카드가 놓인 나무 테이블" /><figcaption>서로의 평범한 하루가<br />조금 더 특별해지는 곳.</figcaption></figure>
+        <figure className="rule-photo"><img src="/assets/editorial-note-v2.webp" alt="햇살 아래 꽃과 빈 메모 카드가 놓인 나무 테이블" /><figcaption>서로의 평범한 하루가<br />조금 더 특별해지는 곳.</figcaption></figure>
       </div></section>
 
       <section className="benefits section shell" data-reveal>

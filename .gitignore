@@ -5,3 +5,12 @@ dist/
 .env
 .env.*
 !.env.example
+
+# webp로 대체된 원본. 재변환이 필요하면 git history에서 꺼낼 것
+public/assets/editorial-bedroom-v2.png
+public/assets/editorial-laptop-v2.png
+public/assets/editorial-laundry-v2.png
+public/assets/editorial-note-v2.png
+public/assets/muppin-home-portal.png
+public/assets/muppin-phone-real-feed-v3.png
+public/assets/muppin-phone-transparent.png
