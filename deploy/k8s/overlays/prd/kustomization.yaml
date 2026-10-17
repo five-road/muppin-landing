@@ -14,4 +14,4 @@ commonLabels:
 images:
   - name: muppin-landing
     newName: ghcr.io/five-road/muppin-landing
-    newTag: prd-2-49479c4e28a3cc28a6890f88c33066b60101d8c9
+    newTag: prd-3-17075e3cd2928ccd266e6fe86886d389833040ec
