@@ -59,7 +59,7 @@ export function PrivacyPage() {
         <article className="privacy-document">
           <div className="privacy-notice">
             <strong>적용 범위</strong>
-            <p>이 방침은 모바일 앱 Muppin(패키지명: <code>com.msbtff.muppin</code>)과 관련 고객지원에 적용됩니다.</p>
+            <p>이 방침은 모바일 앱 Muppin과 관련 고객지원에 적용됩니다.</p>
           </div>
 
           <section id="overview">
