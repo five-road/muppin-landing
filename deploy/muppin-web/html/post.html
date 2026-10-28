@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muppin 게시물</title>
+<meta property="og:site_name" content="Muppin">
+<meta property="og:title" content="Muppin 게시물">
+<meta property="og:description" content="Muppin 앱에서 게시물을 확인해 보세요.">
+<style>
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+         font-family: -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; background: #f7f7fb; color: #111; }
+  main { width: 100%; max-width: 360px; padding: 32px 24px; box-sizing: border-box; text-align: center; }
+  h1 { margin: 0 0 8px; font-size: 32px; color: #463F3A; letter-spacing: -0.5px; }
+  p { margin: 0 0 32px; color: #555; line-height: 1.5; }
+  a { display: block; padding: 16px; border-radius: 12px; font-weight: 600; text-decoration: none; margin-bottom: 12px; }
+  .open { background: #463F3A; color: #FCFAFB; }
+  .install { background: #fff; color: #463F3A; border: 1px solid #463F3A; }
+</style>
+</head>
+<body>
+<main>
+  <h1>muppin</h1>
+  <p>공유받은 게시물은 Muppin 앱에서 볼 수 있어요.</p>
+  <a id="open" class="open" href="/">앱에서 열기</a>
+  <a class="install" href="https://play.google.com/store/apps/details?id=com.persimmontree.muppin">앱 설치하기</a>
+</main>
+<script>
+  // nginx가 /post/<숫자>만 이 페이지로 보낸다
+  var id = location.pathname.split('/')[2];
+  var store = 'https://play.google.com/store/apps/details?id=com.persimmontree.muppin';
+  document.getElementById('open').href = /Android/i.test(navigator.userAgent)
+    ? 'intent://post/' + id + '#Intent;scheme=muppin;package=com.persimmontree.muppin;S.browser_fallback_url=' + encodeURIComponent(store) + ';end'
+    : 'muppin://post/' + id;
+</script>
+</body>
+</html>

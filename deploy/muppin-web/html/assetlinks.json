@@ -1,0 +1,17 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.persimmontree.muppin",
+      "sha256_cert_fingerprints": [
+        "ED:44:D4:F1:2C:76:BB:0E:F2:16:81:F1:38:D0:28:D3:EF:76:30:16:41:CD:96:46:D5:DC:A1:08:8B:1C:51:90",
+        "D7:FE:86:41:AD:30:79:BC:6D:79:CF:DA:24:7F:F9:E0:4D:70:C3:73:B7:8C:82:01:C0:4C:DD:95:CC:F1:78:11",
+        "5A:AD:68:52:9E:C9:4E:D1:0E:C1:54:15:4A:50:4E:D3:59:FC:AB:F9:A9:C7:C6:12:99:28:C1:44:4B:9D:9B:24",
+        "08:C5:90:62:91:F0:FB:00:78:93:D4:FC:60:57:13:55:12:2A:F0:FF:1E:46:6F:56:54:FB:28:6C:30:EF:35:D2"
+      ]
+    }
+  }
+]
