@@ -21,17 +21,23 @@
 <body>
 <main>
   <h1>muppin</h1>
-  <p>공유받은 게시물은 Muppin 앱에서 볼 수 있어요.</p>
+  <p id="desc">공유받은 게시물은 Muppin 앱에서 볼 수 있어요.</p>
   <a id="open" class="open" href="/">앱에서 열기</a>
   <a class="install" href="https://play.google.com/store/apps/details?id=com.persimmontree.muppin">앱 설치하기</a>
 </main>
 <script>
-  // nginx가 /post/<숫자>만 이 페이지로 보낸다
-  var id = location.pathname.split('/')[2];
+  // nginx가 /post/<숫자>, /member/<숫자>만 이 페이지로 보낸다
+  var parts = location.pathname.split('/');
+  var type = parts[1] === 'member' ? 'member' : 'post';
+  var id = parts[2];
+  if (type === 'member') {
+    document.title = 'Muppin 프로필';
+    document.getElementById('desc').textContent = '공유받은 프로필은 Muppin 앱에서 볼 수 있어요.';
+  }
   var store = 'https://play.google.com/store/apps/details?id=com.persimmontree.muppin';
   document.getElementById('open').href = /Android/i.test(navigator.userAgent)
-    ? 'intent://post/' + id + '#Intent;scheme=muppin;package=com.persimmontree.muppin;S.browser_fallback_url=' + encodeURIComponent(store) + ';end'
-    : 'muppin://post/' + id;
+    ? 'intent://' + type + '/' + id + '#Intent;scheme=muppin;package=com.persimmontree.muppin;S.browser_fallback_url=' + encodeURIComponent(store) + ';end'
+    : 'muppin://' + type + '/' + id;
 </script>
 </body>
 </html>
